@@ -56,6 +56,37 @@ public class CustomLinkedList {
   
   //-------------------------------------------------------------------------------------------------------------------
   
+  public CustomLinkedList copyOfList() {
+    CustomLinkedList list = new CustomLinkedList();
+    
+    if (head != null) {
+      Node currentNode = head;
+      do {
+        Node newNode = new Node(currentNode.data);
+        list.add(newNode);
+        currentNode = currentNode.next;
+      } while (currentNode != null);
+    }
+    return list;
+  }
+  
+  //-------------------------------------------------------------------------------------------------------------------
+  
+  public int sum() {
+    int sum = 0;
+    
+    if (head != null) {
+      Node currentNode = head;
+      do {
+        sum += currentNode.data;
+        currentNode = currentNode.next;
+      }  while (currentNode != null);
+    }
+    return sum;
+  }
+  
+  //-------------------------------------------------------------------------------------------------------------------
+  
   public void displayList() {
     if (head != null) {
       Node currentNode = head;
